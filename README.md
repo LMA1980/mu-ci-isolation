@@ -1,16 +1,16 @@
-# MuIsolation
+# mu-ci-isolation
 
 <p align="center">
   <a href="https://hook.lma1980.duckdns.org/jobs">
-    <img src="https://hook.lma1980.duckdns.org/cards/LMA1980/MuIsolation/card.svg" alt="MuIsolation Factory Scorecard" width="520"/>
+    <img src="https://hook.lma1980.duckdns.org/cards/LMA1980/mu-ci-isolation/card.svg" alt="mu-ci-isolation Factory Scorecard" width="520"/>
   </a>
 </p>
 
 <p align="center">
-  <a href="https://hook.lma1980.duckdns.org/jobs"><img src="https://hook.lma1980.duckdns.org/badges/LMA1980/MuIsolation/status.svg" alt="CI Status"/></a>
-  <a href="https://hook.lma1980.duckdns.org/jobs"><img src="https://hook.lma1980.duckdns.org/badges/LMA1980/MuIsolation/score.svg" alt="Quality Score"/></a>
-  <a href="https://hook.lma1980.duckdns.org/jobs"><img src="https://hook.lma1980.duckdns.org/badges/LMA1980/MuIsolation/coverage.svg" alt="Coverage"/></a>
-  <a href="https://hook.lma1980.duckdns.org/jobs"><img src="https://hook.lma1980.duckdns.org/badges/LMA1980/MuIsolation/benchmark.svg" alt="Benchmark"/></a>
+  <a href="https://hook.lma1980.duckdns.org/jobs"><img src="https://hook.lma1980.duckdns.org/badges/LMA1980/mu-ci-isolation/status.svg" alt="CI Status"/></a>
+  <a href="https://hook.lma1980.duckdns.org/jobs"><img src="https://hook.lma1980.duckdns.org/badges/LMA1980/mu-ci-isolation/score.svg" alt="Quality Score"/></a>
+  <a href="https://hook.lma1980.duckdns.org/jobs"><img src="https://hook.lma1980.duckdns.org/badges/LMA1980/mu-ci-isolation/coverage.svg" alt="Coverage"/></a>
+  <a href="https://hook.lma1980.duckdns.org/jobs"><img src="https://hook.lma1980.duckdns.org/badges/LMA1980/mu-ci-isolation/benchmark.svg" alt="Benchmark"/></a>
 </p>
 
 ---
@@ -25,7 +25,7 @@ Privileges are monotonically attenuated from the physical host down to individua
 
 ```text
 +--------------------------------------------------------------------------+
-| Layer 1: Operator Host Ceiling (/etc/mu-isolation/ceiling.yml)          |
+| Layer 1: Operator Host Ceiling (/etc/mu-ci-isolation/ceiling.yml)        |
 | Host-wide maximum memory, core allocations, network CIDRs, devices      |
 +--------------------------------------------------------------------------+
                                     │  Monotonic Attenuation (∩)
@@ -50,7 +50,7 @@ If $\text{Task} \not\subseteq \text{Profile}$ or $\text{Profile} \not\subseteq \
 
 ## Dual-Backend Isolation Architecture
 
-`MuIsolation` abstracts execution through the `IsolationBackend` trait with two specialized backends:
+`mu-ci-isolation` abstracts execution through the `IsolationBackend` trait with two specialized backends:
 
 ```rust
 pub trait IsolationBackend: Send + Sync {

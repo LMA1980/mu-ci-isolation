@@ -38,7 +38,7 @@ pub enum NetworkEgressMode {
     RestrictedCidrs(Vec<String>),
 }
 
-/// Layer 1: Operator Host Ceiling configuration (`/etc/mu-isolation/ceiling.yml`).
+/// Layer 1: Operator Host Ceiling configuration (`/etc/mu-ci-isolation/ceiling.yml`).
 ///
 /// Defines the absolute upper bound of resources, filesystem paths, network egress CIDRs,
 /// and hardware features that any repository profile or task on this host may request.

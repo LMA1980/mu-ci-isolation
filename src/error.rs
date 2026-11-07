@@ -1,6 +1,6 @@
 use thiserror::Error;
 
-/// Canonical error type for the `MuIsolation` 3-layer privilege attenuation
+/// Canonical error type for the `mu-ci-isolation` 3-layer privilege attenuation
 /// and sandbox execution engine.
 #[derive(Error, Debug)]
 pub enum IsolationError {
