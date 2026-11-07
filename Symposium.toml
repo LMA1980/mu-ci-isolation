@@ -1,0 +1,3 @@
+name = "mu-ci-isolation"
+# Crate-embedded Symposium manifest for mu-ci-isolation.
+# Default `skills/` directory is included automatically for crate/workspace plugins.

@@ -2,7 +2,7 @@ use std::ffi::OsString;
 use std::fs;
 use std::path::PathBuf;
 
-use mu_isolation::{
+use mu_ci_isolation::{
     apply_rlimit_memlock, probe_kvm_device, register_ai_thread_if_present,
     resolve_effective_policy, validate_memlock_limit, DesiredSecurityFile, HostCeilingConfig,
     HypervisorSandbox, IsolationBackend, IsolationError, KernelSandbox, LandlockRuleBuilder,

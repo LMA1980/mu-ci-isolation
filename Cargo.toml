@@ -1,10 +1,10 @@
 [package]
-name = "mu-isolation"
+name = "mu-ci-isolation"
 version = "0.1.0"
 edition = "2021"
 description = "3-layer monotonic privilege attenuation and dual-backend KernelSandbox/HypervisorSandbox engine"
 license = "LGPL-3.0-only WITH LGPL-3.0-linking-exception"
-repository = "https://github.com/LMA1980/MuIsolation"
+repository = "https://github.com/LMA1980/mu-ci-isolation"
 
 [dependencies]
 serde = { version = "1", features = ["derive"] }
