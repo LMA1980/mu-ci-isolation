@@ -37,8 +37,9 @@ Privileges are monotonically attenuated from the physical host down to individua
 
 ```text
 +--------------------------------------------------------------------------+
-| Layer 1: Operator Host Ceiling (MU_ISOLATION_CEILING_PATH,               |
-|          default /etc/mu-isolation/ceiling.yml)                          |
+| Layer 1: Operator Host Ceiling (MU_CI_ISOLATION_CEILING_PATH,            |
+|          default /etc/mu-ci-isolation/ceiling.yml;                       |
+|          Phase 1–2 fallback /etc/mu-isolation/ceiling.yml)               |
 | Host-wide maximum memory, core allocations, network CIDRs, devices       |
 +--------------------------------------------------------------------------+
                                     │  Monotonic Attenuation (∩)
@@ -95,7 +96,7 @@ pub trait IsolationBackend: Send + Sync {
 ### 1. `KernelSandbox` (Containerless Linux Security)
 
 - **Landlock LSM**: Unprivileged filesystem access restriction rules (`LandlockPathRule`).
-- **cgroupv2 Resource Envelopes**: Enforces CPU quotas, memory ceilings, and PID limits (`max_pids`).
+- **cgroupv2 Resource Envelopes**: Enforces CPU quotas, memory ceilings, and PID limits (`max_pids`) under `mu-ci-isolation.slice` (see `deploy/mu-ci-isolation.slice`).
 - **Linux Namespaces**: Unshares `CLONE_NEWNS`, `CLONE_NEWPID`, `CLONE_NEWNET`, `CLONE_NEWIPC`, `CLONE_NEWUTS`, and `CLONE_NEWUSER`.
 - **`PR_SET_NO_NEW_PRIVS`**: Disallows obtaining new privileges via setuid/setgid binaries.
 - **Seccomp-BPF**: Filters dangerous syscalls (`kexec`, `reboot`, raw sockets, `ptrace`).

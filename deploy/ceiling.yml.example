@@ -1,0 +1,29 @@
+# Operator Host Ceiling (/etc/mu-ci-isolation/ceiling.yml)
+# Layer 1 of 3-layer monotonic privilege attenuation:
+# Effective Grants = Ceiling ∩ Profile (.muci/security.yml) ∩ Task
+node_id: node-a
+arch: x86_64
+allowed_backends:
+  - Kernel
+  - Hypervisor
+allowed_read_prefixes:
+  - /
+allowed_write_prefixes:
+  - /tmp
+  - /var/lib/mu-ci-worker
+  - /var/lib/action-runner
+allowed_exec_prefixes:
+  - /bin
+  - /usr/bin
+  - /usr/local/bin
+  - /opt
+  - /var/lib/mu-ci-worker
+  - /var/lib/action-runner
+  - /tmp
+allowed_egress_cidrs:
+  - 0.0.0.0/0
+max_memlock_kb: 8388608
+max_cpu_cores: 6
+max_memory_mb: 32768
+max_pids: 1024
+allow_spacemit_ai_thread: false

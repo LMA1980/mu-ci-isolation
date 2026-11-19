@@ -1,0 +1,10 @@
+[Unit]
+Description=mu-ci-isolation Sandboxed Stage Execution Slice
+Documentation=https://github.com/LMA1980/mu-ci-isolation
+Before=slices.target
+
+[Slice]
+CPUAccounting=yes
+MemoryAccounting=yes
+TasksAccounting=yes
+IOAccounting=yes
